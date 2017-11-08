@@ -1,0 +1,153 @@
+{
+    "languageModel": {
+        "types": [{
+            "name": "string",
+            "values": [{
+                    "id": null,
+                    "name": {
+                        "value": "abracadabra",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "yadda yadda yadda",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "ooh la la",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "knock knock",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "jiminy cricket",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Whisper",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Break",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Emphasis",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Paragraph",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Telephone Number",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "phonetic",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Speech Prosody",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Sentence",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Spell out",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Numbers",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Substitute",
+                        "synonyms": []
+                    }
+                },
+                {
+                    "id": null,
+                    "name": {
+                        "value": "Word Example",
+                        "synonyms": []
+                    }
+                }
+            ]
+        }],
+        "intents": [{
+                "name": "AMAZON.CancelIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.HelpIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.StopIntent",
+                "samples": []
+            },
+            {
+                "name": "SampleSpeech",
+                "samples": [
+                    "Let me hear {speechName}",
+                    "{speechName}",
+                    "say {speechName}"
+                ],
+                "slots": [{
+                    "name": "speechName",
+                    "type": "string"
+                }]
+            }
+        ],
+        "invocationName": "speech samples"
+    }
+}

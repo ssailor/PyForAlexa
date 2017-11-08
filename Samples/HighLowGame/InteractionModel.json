@@ -1,0 +1,40 @@
+{
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "MakeGuess",
+          "samples": [
+            "I guess"
+          ],
+          "slots": []
+        },
+        {
+          "name": "MakeGuessIntent",
+          "samples": [
+            "{guessedNumber}",
+            "I guess {guessedNumber}",
+            "My guess is {guessedNumber}"
+          ],
+          "slots": [
+            {
+              "name": "guessedNumber",
+              "type": "AMAZON.NUMBER"
+            }
+          ]
+        }
+      ],
+      "invocationName": "high low game"
+    }
+  }

@@ -1,0 +1,139 @@
+{
+    "Sayings": [{
+            "ID": 1,
+            "Name": "abracadabra",
+            "Type": "Interjection",
+            "Description": "Example of Alexa interjection",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speechcon-reference-interjections-english-us.html",
+            "SpeechText": "<say-as interpret-as=\"interjection\">abracadabra</say-as>"
+        },
+        {
+            "ID": 2,
+            "Name": "now now",
+            "Type": "Interjection",
+            "Description": "Example of Alexa interjection",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speechcon-reference-interjections-english-us.html",
+            "SpeechText": "<say-as interpret-as=\"interjection\">now now</say-as>"
+        },
+        {
+            "ID": 3,
+            "Name": "ooh la la",
+            "Type": "Interjection",
+            "Description": "Example of Alexa interjection",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speechcon-reference-interjections-english-us.html",
+            "SpeechText": "<say-as interpret-as=\"interjection\">ooh la la</say-as>"
+        },
+        {
+            "ID": 4,
+            "Name": "knock knock",
+            "Type": "Interjection",
+            "Description": "Example of Alexa interjection",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speechcon-reference-interjections-english-us.html",
+            "SpeechText": "<say-as interpret-as=\"interjection\">knock knock</say-as>"
+        },
+        {
+            "ID": 5,
+            "Name": "jiminy cricket",
+            "Type": "Interjection",
+            "Description": "Example of Alexa interjection",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speechcon-reference-interjections-english-us.html",
+            "SpeechText": "<say-as interpret-as=\"interjection\">jiminy cricket</say-as>"
+        },
+        {
+            "ID": 6,
+            "Name": "Whisper",
+            "Type": "Amazon Effect",
+            "Description": "Show off the Amazon Effect 'whisper'",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#amazon-effect",
+            "SpeechText": "<amazon:effect name=\"whispered\">I am a machine.</amazon:effect>"
+        },
+        {
+            "ID": 7,
+            "Name": "Break",
+            "Type": "Break",
+            "Description": "Show an example of a break in text",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#break",
+            "SpeechText": "I will return after this short four second break <break time=\"4s\"/>  Fear not for I have returned"
+        },
+        {
+            "ID": 8,
+            "Name": "Emphasis",
+            "Type": "Emphasis",
+            "Description": "Demonstrate emphasis on a specific section of text.",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#emphasis",
+            "SpeechText": "I don't just love tacos, I mean I really <emphasis level=\"strong\">love</emphasis> tacos"
+        },
+        {
+            "ID": 9,
+            "Name": "Paragraph",
+            "Type": "Paragraph",
+            "Description": "Demonstrate the Paragraph functionality",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#p",
+            "SpeechText": "<p>I'm going to talk about my first topic and pause when I'm done.</p> <p> Now we are are on the second paragraph. You should have noticed the pause between the paragraphs</p>"
+        },
+        {
+            "ID": 10,
+            "Name": "Telephone Number",
+            "Type": "Say As",
+            "Description": "Demonstrate say as functionality",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#phoneme . Song : 867-5309 by Tommy Tutone",
+            "SpeechText": "Jenny I've got your number. I need to make you mine. Jenny don't change your number. <say-as interpret-as=\"telephone\">8675309</say-as>."
+        },
+        {
+            "ID": 11,
+            "Name": "phonetic",
+            "Type": "phoneme",
+            "Description": "Demonstarate phonetic pronunciation that alexa can do",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#phoneme",
+            "SpeechText": "You say, <phoneme alphabet=\"ipa\" ph=\"pɪˈkɑːn\">pecan</phoneme>. I say, <phoneme alphabet=\"ipa\" ph=\"ˈpi.kæn\">pecan</phoneme>."
+        },
+        {
+            "ID": 12,
+            "Name": "Speech Prosody",
+            "Type": "prosody",
+            "Description": "Demonstrate the functionality that control speech rate, voice pitch and speech volume.",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#prosody",
+            "SpeechText": "I can change the rate of speech like this. <prosody rate=\"x-fast\">I can go fast like this </prosody> or <prosody rate=\"x-slow\"> Slow like this</prosody>. I can change the pitch of my voice <prosody pitch=\"x-high\">to be really high like this </prosody> or <prosody pitch=\"x-low\"> really low like this</prosody>. Finally I can change how loud I say something. I can be <prosody volume=\"x-loud\"> really loud like this </prosody> or <prosody volume=\"x-soft\"> really soft like this </prosody>."
+        },
+        {
+            "ID": 13,
+            "Name": "Sentence",
+            "Type": "Sentence",
+            "Description": "Demonstrate say as functionality",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#s",
+            "SpeechText": "<p>I can speak in sentences.</p> <p>When I do there will be short pauses between them.</p> <p>This helps them to sound more natural and to flow better.</p>"
+        },
+        {
+            "ID": 14,
+            "Name": "Spell out",
+            "Type": "Say As",
+            "Description": "Demonstrate how to make alexa spell something out",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#say-as",
+            "SpeechText": "<s>Let's spell out some words. The word is Mississippi and it is spelled <say-as interpret-as=\"spell-out\">Mississippi</say-as></s>. <s>The final word is handkerchief and it is spelled <say-as interpret-as=\"spell-out\">handkerchief</say-as> .</s>"
+        },
+        {
+            "ID": 15,
+            "Name": "Numbers",
+            "Type": "Say As",
+            "Description": "Demonstrate Alexa's ability to deal with numbers",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#say-as",
+            "SpeechText": "This is a cardinal number <say-as interpret-as=\"cardinal\">152</say-as> and this is an ordinal order <say-as interpret-as=\"ordinal\">152</say-as> and this is digit by digit <say-as interpret-as=\"digits\">152</say-as>"
+        },
+        {
+            "ID": 16,
+            "Name": "Substitute",
+            "Type": "Sub",
+            "Description": "Demonstrate the substitution functionality",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#sub",
+            "SpeechText": "Here are some examples from the periodic table of elements. Some of the poor metals are <sub alias=\"aluminum\">Al</sub>, <sub alias=\"Zinc\">Zn</sub>, <sub alias=\"Tin\">Sn</sub>, and <sub alias=\"Lead\">Pb</sub>. Let's say them again, Al, Zn, Sn and Pb."
+        },
+        {
+            "ID": 17,
+            "Name": "Word Example",
+            "Type": "W",
+            "Description": "Demonstrate w tag functionality",
+            "Notes": "For more info see - https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#w",
+            "SpeechText": "The word, <say-as interpret-as=\"characters\">read</say-as>, may be interpreted as either the present simple form, <w role=\"amazon:VB\">read</w>, or the past participle form, <w role=\"amazon:VBD\">read</w>."
+        }
+    ]
+}
