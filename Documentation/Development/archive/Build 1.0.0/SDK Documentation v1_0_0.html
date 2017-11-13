@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>PyForAlexa Developer Documentation</title>
+    <style>
+
+        h1 {
+            background-color: lightblue;
+            text-align: center;
+        }
+        
+        .SubSectionBanner {
+            background-color: lightcyan;
+            text-align: center
+        }
+
+        h2 {}
+
+        h3{
+            font-size: 14pt;
+        }
+
+        .CodeBlock {
+            background-color: whitesmoke;
+            border-style: solid;
+            border-width: 2px;
+            font-size: 10pt;
+        }
+
+        .sectionColoring{
+            background-color:lightgray;
+        }
+
+        div {
+            padding: 10px;
+        }
+
+        p {
+            padding-left: 5px;
+            font-size: 13pt;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+        .bulletList{
+            list-style-type: circle;
+        }
+
+        li{
+            font-size: 13pt;
+        }
+
+        .methodList li{
+            padding-bottom: 20px;
+        }
+
+        .buildFormat{
+            background-color: lightcoral;
+            text-align: center;
+            margin-top: -22px;
+            padding: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>PyForAlexa Developer Documentation</h1>
+    <h4 class="buildFormat">Build: 1.0.0</h4>
+    <h2 class="SubSectionBanner">Enums</h2>
+    <div>
+        <a name = "OutputSpeechTypeEnum" />
+        <h2>class.OutputSpeechTypeEnum(<i>Enum</i>)</h2>
+            <p>Enum with the valid options of OutputSpeech types.</p>
+                <ul>
+                    <li><b>Values</b></li>
+                    <li>
+                        <ul class="bulletList">
+                            <li>PlainText = 1</li>
+                            <li>SSML = 2</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "CardTypeEnum" />
+        <h2>class.CardTypeEnum(<i>Enum</i>)</h2>
+            <p>Enum with the valid card type options.</p>
+            <ul>
+                <li><b>Values</b></li>
+                <li>
+                    <ul class="bulletList">
+                        <li>Simple = 1</li>
+                        <li>Standard = 2</li>
+                        <li>LinkAccount = 3</li>
+                    </ul>
+                </li>
+            </ul>
+    </div>
+
+    <div>
+        <a name = "RequestTypeEnum" />
+        <h2>class.RequestTypeEnum(<i>Enum</i>)</h2>
+        <p>Enum with the types for requests that could be found in the provided event json.</p>
+        <ul>
+            <li><b>Values</b></li>
+            <li>
+                <ul class="bulletList">
+                    <li>RequestTypeEnumLaunchRequest = 1</li>
+                    <li>IntentRequest = 2</li>
+                    <li>SessionEndedRequest = 3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "SessionEndedRequestErrorTypeEnum" />
+        <h2>class.SessionEndedRequestErrorTypeEnum(<i>Enum</i>)</h2>
+        <p>Enum with the types of errors that could be given in the case of a 'SessionEndedRequest' type</p>
+        <ul>
+            <li><b>Values</b></li>
+            <li>
+                <ul class="bulletList">
+                    <li>INVALID_RESPONSE = 1</li>
+                    <li>DEVICE_COMMUNICATION_ERROR = 2</li>
+                    <li>INTERNAL_ERROR = 3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "IntentConfirmationStatusEnum" />
+        <h2>class.IntentConfirmationStatusEnum(<i>Enum</i>)</h2>
+        <p>Enum with the types of statuses that an intent could be.</p>
+        <ul>
+            <li><b>Values</b></li>
+            <li>
+                <ul class="bulletList">
+                    <li>NONE = 1</li>
+                    <li>CONFIRMED = 2</li>
+                    <li>DENIED = 3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="SubSectionBanner">Classes</h2>
+    <div class="sectionColoring">
+        <a name = "SimpleRequest" />
+        <h2>class.SimpleRequest(<i>object</i>)</h2>
+        <p>SimpleRequest is a simplified version of the Request object built from the provided event. It presents the user with only the values from the request they are most likely going to need for most applications.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            SimpleRequest(event: json) 
+            </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>IntentName</b>: <i>str</i> </li>
+            <li><b>Slots</b>: <i><a href="#Slot">Slot</a></i></li>
+            <li><b>SessionAttributes</b>: <i><a href="#SessionAttributes">SessionAttributes</a></i></li>
+            <li><b>RequestType</b>: <i><a href="#RequestTypeEnum">RequestTypeEnum</a></i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+            <ul>
+                <li>None</li>
+            </ul>
+    </div>
+
+    <div>
+        <a name = "Session" />
+        <h2>class.Session(<i>object</i>)</h2>
+        <p>Model object for the session section in the request.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            Session(new_session: bool, session_id: int, application=None: <a href="#Application">Application</a>, session_attributes=None: <a href="#SessionAttributes">SessionAttributes</a>, request_user=None: <a href="#User">User</a>)
+            </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>NewSession</b> <i>bool</i></li>
+            <li><b>SessionID</b>: <i>int</i></li>
+            <li><b>Application</b>: <i><a href="#Application">Application</a></i></li>
+            <li><b>SessionAttributes</b>: <i><a href="#SessionAttributes">SessionAttributes</a></i></li>
+            <li><b>User</b>: <i><a href="#User">User</a></i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "User" />
+        <h2>class.User(<i>object</i>)</h2>
+        <p>Model object for the user section in the session section.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            User(user_id: str, access_token=None: str, permissions=None: <a href="#Permissions">Permissions</a>)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+        <li><b>UserID</b>: <i>str</i> </li>
+        <li><b>AccessToken</b>: <i>str</i></li>
+        <li><b>Permissions</b>: <i><a href="#Permissions">Permissions</a></i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "Permissions" />
+        <h2>class.Permissions(<i>object</i>)</h2>
+        <p>Model object for the permissions section in the user section.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+                Permissions(Consent_token=None: str)
+            </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>ConsentToken</b>: <i>str</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "Application" />
+        <h2>class.Application(<i>object</i>)</h2>
+        <p>Model object for the application section in the session section.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            Application(application_id: str)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>ApplicationID</b>: <i>str</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "Context" />
+        <h2>class.Context(<i>object</i>)</h2>
+        <p>Model object for the context section in the request.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            Context(system: <a href="#System">System</a>, audio_player=None: <a href="AudioPlayer">AudioPlayer</a>)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>System</b>: <i><a href="#System">System</a></i></li>
+            <li><b>AudioPlayer</b>: <i><a href="#AudioPlayer">AudioPlayer</a></i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "System" />
+        <h2>class.System(<i>object</i>)</h2>
+        <p>Model object for the system section in the context section.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            System(device: <a href="#Device">Device</a>, application; <a href="#Application">Application</a>, user: <a href="#User">User</a>, api_endpoint: str)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Device</b>: <i><a href="#Device">Device</a></i></li>
+            <li><b>Application</b>: <i><a href="#Application">Application</a></i> </li>
+            <li><b>User</b>: <i><a href="#User">User</a></i></li>
+            <li><b>APIEndpoint</b>: <i>str</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "Device" />
+        <h2>class.Device(<i>object</i>)</h2>
+        <p>Model object for the device section in the system section.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            Device(device_id: str, supported_interfaces: str)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>DeviceID</b>: <i>str</i></li>
+            <li><b>SupportedInterfaces</b>: <i>str</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "AudioPlayer" />
+        <h2>class.AudioPlayer(<i>object</i>)</h2>
+        <p>Model object for the AudioPlayer section in the context section.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            AudioPlayer(player_activity: str, token: str, offset_in_milliseconds: int)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>PlayerActivity</b>: <i>str</i></li>
+            <li><b>Token</b>: <i>str</i></li>
+            <li><b>OffsetInMilliseconds</b>: <i>int</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "Slot" />
+        <h2>class.Slot(<i>object</i>)</h2>
+        <p>Model object for slot info (user provided inputs) found in the request.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            Slot(name: str, value: object, confirmation_status: bool)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Name</b>: <i>str</i></li>
+            <li><b>Value</b>: <i>object</i></li>
+            <li><b>ConfirmationStatus</b>: <i>bool</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "StandardRequest" />
+        <h2>class.StandardRequest(<i>object</i>)</h2>
+        <p>Base class for the Alexa request types.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            StandardRequest(request_type: <a href="#RequestTypeEnum">RequestTypeEnum</a>, request_id: str, timestamp: str, locale: str) 
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Type</b>: <i><a href="#RequestTypeEnum">RequestTypeEnum</a></i></li>
+            <li><b>RequestID</b>: <i>str</i></li>
+            <li><b>Timestamp</b>: <i>str</i></li>
+            <li><b>Locale</b>: <i>str</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "LaunchRequestObject" />
+        <h2>class.LaunchRequestObject(<i>StandardRequest</i>)</h2>
+        <p>Model used to create a LaunchRequest object from the request that is provided to the user from Alexa.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            LaunchRequestObject(request_type: <a href="#RequestTypeEnum">RequestTypeEnum</a>, request_id: str, timestamp: str, locale: str)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Type</b>: <i><a href="#RequestTypeEnum">RequestTypeEnum</a></i></li>
+            <li><b>RequestID</b>: <i>str</i></li>
+            <li><b>Timestamp</b>: <i>str</i></li>
+            <li><b>Locale</b>: <i>str</i></li>
+            <li><b>DialogState</b>: <i>str</i></li>
+            <li><b>Intent</b>: <i><a href="#Intent">Intent</a></i></li>
+         </ul>
+         <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "IntentRequest" />
+        <h2>class.IntentRequest(<i>StandardRequest</i>)</h2>
+        <p>Model used to create a IntentRequest object from the request that is provided to the user from Alexa.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            IntentRequest(request_type: <a href="#RequestTypeEnum">RequestTypeEnum</a>, request_id: str, timestamp: str, locale: str, dialog_state: str, intent: <a href="#Intent">Intent</a>)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Type</b>: <i><a href="#RequestTypeEnum">RequestTypeEnum</a></i></li>
+            <li><b>RequestID</b>: <i>str</i></li>
+            <li><b>Timestamp</b>: <i>str</i></li>
+            <li><b>Locale</b>: <i>str</i></li>
+            <li><b>DialogState</b>: <i>str</i></li>
+            <li><b>Intent</b>: <i><a href="#Intent">Intent</a></i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "SessionEndedRequest" />
+        <h2>class.SessionEndedRequest(<i>StandardRequest</i>)</h2>
+        <p>Model used to create a SessionEndedRequest object from the request that is provided to the user from Alexa.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            SessionEndedRequest(request_type: <a href="#RequestTypeEnum">RequestTypeEnum</a>, request_id: str, timestamp: str, locale: str, session_error: <a href="#SessionEndedRequestError">SessionEndedRequestError</a>)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Type</b>: <i><a href="#RequestTypeEnum">RequestTypeEnum</a></i></li>
+            <li><b>RequestID</b>: <i>str</i></li>
+            <li><b>Timestamp</b>: <i>str</i></li>
+            <li><b>Locale</b>: <i>str</i></li>
+            <li><b>SessionError</b>: <i><a href="#SessionEndedRequestError">SessionEndedRequestError</a></i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "SessionEndedRequestError" />
+        <h2>class.SessionEndedRequestError(<i>object</i>)</h2>
+        <p>Model used to create a SessionEndedRequestError object which is a sub object of the SessionEndedRequest object.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            SessionEndedRequestError(error_type: str, message: str)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>ErrorType</b>: <i>str</i></li>
+            <li><b>Message</b>: <i>str</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "Intent" />
+        <h2>class.Intent(<i>object</i>)</h2>
+        <p>Model used to create an Intent object which is a sub object of the IntentRequest object and values are provided by the request from Alexa.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            Intent(name: str, confirmation_status: <a href="#IntentConfirmationStatusEnum">IntentConfirmationStatusEnum</a>, slots=None: <a href="#Slots">Slots</a>)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Name</b>: <i>str</i></li>
+            <li><b>ConfirmationStatus</b>: <i><a href="#IntentConfirmationStatusEnum">IntentConfirmationStatusEnum</a></i> </li>
+            <li><b>Slots</b>: <i><a href="#Slots">Slots</a></i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "Card" />
+        <h2>class.Card(<i>object</i>)</h2>
+        <p>Object used to create a card that can be sent with the response.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            Card(card_type: <a href="#CardTypeEnum">CardTypeEnum</a>, title: str, text: str, card_image=None: <a href="#CardImage">CardImage</a>)
+            </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Type</b>: <i><a href="#CardTypeEnum">CardTypeEnum</a></i></li>
+            <li><b>Title</b>: <i>str</i></li>
+            <li><b>Text</b>: <i>str</i></li>
+            <li><b>CardImage</b>: <i><a href="#CardImage">CardImage</a></i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "CardImage" />
+        <h2>class.CardImage(<i>object</i>)</h2>
+        <p>Object used to create a card image that can be added onto the card object.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            CardImage(small_image_url: str, large_image_url: str)
+            </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>SmallImageURL</b>: <i>str</i></li>
+            <li><b>LargeImageURL</b>: <i>str</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "OutputSpeech" />
+        <h2>class.OutputSpeech(<i>object</i>)</h2>
+        <p>Model used to create an OutputSpeech object that is added to the response.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            OutputSpeech(speech_type: <a href="#OutputSpeechTypeEnum">OutputSpeechTypeEnum</a>, text: str)
+            </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Type</b>: <i><a href="#OutputSpeechTypeEnum">OutputSpeechTypeEnum</a></i></li>
+            <li><b>Text</b>: <i>str</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "Reprompt" />
+        <h2>class.Reprompt(<i>OutputSpeech</i>)</h2>
+        <p>Model Used to create a reprompt object that can be added to the response. Reprompt is just a wrapper for the OutputSpeech object.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            Reprompt(speech_type: <a href="#OutputSpeechTypeEnum">OutputSpeechTypeEnum</a>, text: str)
+            </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Type</b>: <i><a href="#OutputSpeechTypeEnum">OutputSpeechTypeEnum</a></i></li>
+            <li><b>Text</b>: <i>str</i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "SessionAttributes" />
+        <h2>class.SessionAttributes(<i>object</i>)</h2>
+        <p>Used to use, store and pass along variables/attributes that a user wishes to carry between different session states.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+            SessionAttributes()
+            </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul class="methodList">
+            <li>
+                <b>insert</b>
+                <p>Checks if the collection already has the key and updates it if it does, otherwise it adds it.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>insert(key: <i>str</i>, value: <i>object</i>)</code></div>
+            </li>
+            <li>
+                <b>get_all</b>
+                <p>Returns a dictionary of all of the session attributes.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>get_all()</code></div>
+            </li>
+            <li>
+                <b>delete_by_key</b>
+                <p>Removes a specified session attribute from the collection.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>delete_by_key(key: <i>str</i>)</code></div>
+            </li>
+            <li>
+                <b>get_by_key</b>
+                <p>Gets a specified session attribute by the provided key.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>get_by_key(key: <i>str</i>)</code></div>
+            </li>
+            <li>
+                <b>edit_by_key</b>
+                <p>Edit a specified record in the session attributes.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>edit_by_key(key: <i>str</i>, value: <i>object</i>)</code></div>
+            </li>
+            <li>
+                <b>delete_all</b>
+                <p>Clears all session attributes from the collection.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>delete_all()</code></div>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "Slots" />
+        <h2>class.Slots(<i>object</i>)</h2>
+        <p>Storage for the slots(user provided inputs) found in the request.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+            <code>
+                Slots()
+            </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul class="methodList">
+            <li>
+                <b>insert</b>
+                <p>Checks if the collection already has the slot and updates it if it does, otherwise it adds it.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>insert(slot: <i><a href="#Slot">Slot</a></i>)</code></div>
+            </li>
+            <li>
+                <b>get_by_name</b>
+                <p>Retrieves a slot using the provided slot name.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>get_by_name(slot_name : <i>str</i>)</code></div>
+            </li>
+            <li>
+                <b>get_all</b>
+                <p>Returns a dictionary of all the slots.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>get_all()</code></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sectionColoring">
+        <a name = "Request" />
+        <h2>class.Request(<i>object</i>)</h2>
+        <p>Request object that contains the functionality to create the request objects from the event property provided by Alexa.</p>
+        <h3><u>Constructor</u></h3>
+        <div class="CodeBlock">
+        <code>
+            Request(event: json)
+        </code>
+        </div>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>Version</b>: <i>str</i></li>
+            <li><b>Session</b>: <i><a href="#Session">Session</a></i></li>
+            <li><b>Context</b>: <i><a href="#Context">Context</a></i></li>
+            <li><b>Request</b>: <i><a href="#Request">Request</a></i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul>
+            <li>None</li>
+        </ul>
+    </div>
+
+    <div>
+        <a name = "Response" />
+        <h2>class.Response(<i>object</i>)</h2>
+        <p>Object used to genreate the response needed by Alexa.</p>
+        <h3><u>Constructor</u></h3>
+        <ul>
+            <li>
+                <div class="CodeBlock">
+                    <code>
+                        Response(session_attributes=None: <a href="#SessionAttributes">SessionAttributes</a>)
+                        </code>
+                </div>
+            </li>
+        </ul>
+        <h3><u>Properties</u></h3>
+        <ul>
+            <li><b>SessionAttributes</b>: <i><a href="#SessionAttributes">SessionAttributes</a></i></li>
+        </ul>
+        <h3><u>Methods</u></h3>
+        <ul class="methodList">
+            <li>
+                <h4>tell_simple</h4>
+                <p>Creates a json response that will tell Alexa to respond with the provided text and end the session.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"> 
+                    <code>
+                        tell_simple(speech_text: <i>str</i>) -> json
+                    </code>
+                </div>
+            </li>
+            <li>
+                <b>tell_with_card_simple</b>
+                <p>Creates a response that will have Alexa respond with the provided text, create a simple card that will be sent to the users Alexa app and end the session.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>tell_with_card_simple(speech_text: <i>str</i>, card_title: <i>str</i>, card_text: <i>str</i>)</code></div class="CodeBlock">
+            </li>
+            <li>
+                <b>tell_advanced</b>
+                <p>Creates a response that will have Alexa respond with the provided text in the SSML format and end the session.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>tell_advanced(speech_text: <i>str</i>)</code></div>
+
+            </li>
+            <li>
+                <b>tell_with_card_advanced</b>
+                <p>Creates a response that will have Alexa respond with the provided text in the SSML format. It also creates a standard card, which can contain images, that will be returned to the users Alexa App. Finally the session will be ended.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>tell_with_card_advanced(speech_text: <i>str</i>, card_title: <i>str</i>, card_text: <i>str</i>, card_image_small_url=None: <i>str</i>, card_image_large_url=None: <i>str</i>)</code></div class="CodeBlock">
+            </li>
+            <li>
+                <b>ask_simple</b>
+                <p>Creates a response that will have Alexa respond with the provided text and will keep the session alive to waiting for interaction from the user. Reprompts are implemented for when a user does not respond to the origional prompt .</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>ask_simple(speech_text: <i>str</i>, reprompt_text: <i>str</i>)</code></div class="CodeBlock">
+            </li>
+            <li>
+                <b>ask_with_card_simple</b>
+                <p>Creates a response that will have Alexa respond with the provided text and will keep the session alive to waiting for interaction from the user. Reprompts are implemented for when a user does not respond to the origional prompt. A simple card will also be sent to the users Alexa app with the provided content.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>ask_with_card_simple(speech_text: <i>str</i>, reprompt_text: <i>str</i>, card_title: <i>str</i>, card_text: <i>str</i>)</code></div class="CodeBlock">
+            </li>
+            <li>
+                <b>ask_advanced</b>
+                <p>Creates a response that will have Alexa respond with the provided text in the SSML format, and will keep the session alive to waiting for interaction from the user. Reprompts are implemented in SSML for when a user does not respond to the origional prompt.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>ask_advanced(speech_text: <i>str</i>, reprompt_text: <i>str</i>)</code></div class="CodeBlock">
+            </li>
+            <li>
+                <b>ask_with_card_advanced</b>
+                <p>Creates a response that will have Alexa respond with the provided text in the SSML format, and will keep the session alive to waiting for interaction from the user. Reprompts are implemented in SSML, for when a user does not respond to the origional prompt. A Standard card will also be sent to the users Alexa app with the provided content. Standard cards alos allow users to provide images via HTTPS Urls to the images</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>ask_with_card_advanced(speech_text: <i>str</i>, reprompt_text: <i>str</i>, card_title: <i>str</i>, card_text: <i>str</i>, card_image_small_url=None: <i>str</i>, card_image_large_url=None: <i>str</i>)</code></div class="CodeBlock">
+            </li>
+            <li>
+                <b>generate_response</b>
+                <p>Dynamically builds the response that will be sent to Alexa using the provided object. This is the function you will use if you want to create a request differnet that the provided ones.</p>
+                <b><u>Method Signature</u></b>
+                <div class="CodeBlock"><code>generate_response(output_speech: <i><a href="#OutputSpeech">OutputSpeech</a></i>, card=None: <i><a href="#Card">Card</a></i>, reprompt=None: <i><a href="#Reprompt">Reprompt</a></i>, shouldEndSession=True: <i>bool</i>)</code></div class="CodeBlock">
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
