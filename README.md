@@ -18,8 +18,20 @@ These instructions will help you to install and develop to this SDK.
 
 Instructions on how to add the SDK to a project.
 
+#### Run
+```
+pip install PyForAlexa
+```
+
+#### Install to a local directory for upload to AWS Lambda
+```
+pip install --target="LOCAL DIRECTORY PATH HERE" PyForAlexa 
+```
+
+#### Clone
+
 1. Clone/Download the repo to the desired location.
-2. Copy the PyForAlexa.py file and add it to the same directory as the Alexa program source code.
+2. Copy the PyForAlexa directory and add it to the same directory as the Alexa program source code.
 3. Import the SDK into the project
 
 ```
